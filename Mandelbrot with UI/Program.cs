@@ -15,7 +15,6 @@ class SmoothForm : Form
         DoubleBuffered = true;
     }
 
-    //TEST
     class Program
     {
         static void Main()
