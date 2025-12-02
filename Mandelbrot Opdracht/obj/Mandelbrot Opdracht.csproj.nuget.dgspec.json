@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\He\\Desktop\\Mandelbrot Opdracht\\Mandelbrot Opdracht.csproj": {}
+    "C:\\Users\\He\\Documents\\GitHub\\Mandelbrot-with-UI\\Mandelbrot Opdracht\\Mandelbrot Opdracht.csproj": {}
   },
   "projects": {
-    "C:\\Users\\He\\Desktop\\Mandelbrot Opdracht\\Mandelbrot Opdracht.csproj": {
+    "C:\\Users\\He\\Documents\\GitHub\\Mandelbrot-with-UI\\Mandelbrot Opdracht\\Mandelbrot Opdracht.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\He\\Desktop\\Mandelbrot Opdracht\\Mandelbrot Opdracht.csproj",
+        "projectUniqueName": "C:\\Users\\He\\Documents\\GitHub\\Mandelbrot-with-UI\\Mandelbrot Opdracht\\Mandelbrot Opdracht.csproj",
         "projectName": "Mandelbrot Opdracht",
-        "projectPath": "C:\\Users\\He\\Desktop\\Mandelbrot Opdracht\\Mandelbrot Opdracht.csproj",
+        "projectPath": "C:\\Users\\He\\Documents\\GitHub\\Mandelbrot-with-UI\\Mandelbrot Opdracht\\Mandelbrot Opdracht.csproj",
         "packagesPath": "C:\\Users\\He\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\He\\Desktop\\Mandelbrot Opdracht\\obj\\",
+        "outputPath": "C:\\Users\\He\\Documents\\GitHub\\Mandelbrot-with-UI\\Mandelbrot Opdracht\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\He\\AppData\\Roaming\\NuGet\\NuGet.Config",

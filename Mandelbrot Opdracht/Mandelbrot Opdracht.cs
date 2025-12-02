@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
-
+//Hello World
 class SmoothForm : Form
 {
     public SmoothForm(Size window)

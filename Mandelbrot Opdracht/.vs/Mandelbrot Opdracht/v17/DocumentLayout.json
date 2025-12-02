@@ -1,0 +1,62 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\He\\Documents\\GitHub\\Mandelbrot-with-UI\\Mandelbrot Opdracht\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1DECA63B-EE09-4ADC-B388-BC92BE3E8BAF}|Mandelbrot Opdracht.csproj|c:\\users\\he\\documents\\github\\mandelbrot-with-ui\\mandelbrot opdracht\\mandelbrot opdracht.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DECA63B-EE09-4ADC-B388-BC92BE3E8BAF}|Mandelbrot Opdracht.csproj|solutionrelative:mandelbrot opdracht.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DECA63B-EE09-4ADC-B388-BC92BE3E8BAF}|Mandelbrot Opdracht.csproj|c:\\users\\he\\documents\\github\\mandelbrot-with-ui\\mandelbrot opdracht\\mandelbrot opdracht.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1DECA63B-EE09-4ADC-B388-BC92BE3E8BAF}|Mandelbrot Opdracht.csproj|solutionrelative:mandelbrot opdracht.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Mandelbrot Opdracht.cs",
+              "DocumentMoniker": "C:\\Users\\He\\Documents\\GitHub\\Mandelbrot-with-UI\\Mandelbrot Opdracht\\Mandelbrot Opdracht.cs",
+              "RelativeDocumentMoniker": "Mandelbrot Opdracht.cs",
+              "ToolTip": "C:\\Users\\He\\Documents\\GitHub\\Mandelbrot-with-UI\\Mandelbrot Opdracht\\Mandelbrot Opdracht.cs",
+              "RelativeToolTip": "Mandelbrot Opdracht.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T22:43:05.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Mandelbrot Opdracht",
+              "DocumentMoniker": "C:\\Users\\He\\Documents\\GitHub\\Mandelbrot-with-UI\\Mandelbrot Opdracht\\Mandelbrot Opdracht.csproj",
+              "RelativeDocumentMoniker": "Mandelbrot Opdracht.csproj",
+              "ToolTip": "C:\\Users\\He\\Documents\\GitHub\\Mandelbrot-with-UI\\Mandelbrot Opdracht\\Mandelbrot Opdracht.csproj",
+              "RelativeToolTip": "Mandelbrot Opdracht.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-02T22:42:53.749Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
