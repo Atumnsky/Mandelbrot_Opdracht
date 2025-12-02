@@ -329,7 +329,7 @@ class SmoothForm : Form
             renderPicture(null, new EventArgs());
 
 
-
+            // mouse zoom functie
             void mouseZoom(object sender, MouseEventArgs mea)
             {
                 int magnification = (int)mouseMag.Value;
@@ -344,7 +344,6 @@ class SmoothForm : Form
                         zoomControl.Value -= magnification;
                 }
 
-
                 // zoom en view
                 double zoomValue = (double)zoomControl.Value;
                 double zoomFactor = Math.Pow(1.1, zoomValue);
@@ -353,15 +352,22 @@ class SmoothForm : Form
                 double rangeMin = -2;
                 double rangeWidth = rangeMax - rangeMin;
 
+                // Als zoomFactor groter wordt, wordt de viewWidth kleiner (inzoomen)
                 double viewWidth = rangeWidth / zoomFactor;
+                // uit (bitmapHeight/bitmapWidth) krijgt je de ratio tussen Width en Height
                 double viewHeight = viewWidth * (bitmapHeight / bitmapWidth);
 
+                // pixelDx|Dy is hoeveel ruimte een pixel vertegenwoordigd in de complex as van de Mandelbrot
                 double pixelDx = viewWidth / bitmapWidth;
                 double pixelDy = viewHeight / bitmapHeight;
 
+                // (mea.X - bitmapWidth/2) Als deze waarde pos. is dan gaat het naar rechts, negatief naar links
+                // *pixelDx om de waarde te omzetten naar de complex as. + de huidige x verplaatsing
+                // zelfde voor Y
                 double newCenterX = ((mea.X - bitmapWidth / 2) * pixelDx) + (double)xControl.Value;
                 double newCenterY = ((mea.Y - bitmapHeight / 2) * pixelDy) + (double)yControl.Value;
 
+                // de locatie omzetten naar nieuwe locatie. Decimal omdat NumericUpDown decimal gebruikt
                 xControl.Value = (decimal)newCenterX;
                 yControl.Value = (decimal)newCenterY;
 
