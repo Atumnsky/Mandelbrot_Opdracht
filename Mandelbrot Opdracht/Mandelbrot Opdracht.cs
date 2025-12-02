@@ -308,7 +308,7 @@ class SmoothForm : Form
             screen.Controls.Add(render);
             render.Text = "Render";
             render.Font = new Font("Arial Black", 15, FontStyle.Regular);
-            render.Size = new Size(500, 120);
+            render.Size = new Size(480, 120);
             render.Location = new Point(10, screenHeight - 150);
 
 

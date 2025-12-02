@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1DECA63B-EE09-4ADC-B388-BC92BE3E8BAF}|Mandelbrot Opdracht.csproj|c:\\users\\he\\documents\\github\\mandelbrot-with-ui\\mandelbrot opdracht\\mandelbrot opdracht.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1DECA63B-EE09-4ADC-B388-BC92BE3E8BAF}|Mandelbrot Opdracht.csproj|solutionrelative:mandelbrot opdracht.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DECA63B-EE09-4ADC-B388-BC92BE3E8BAF}|Mandelbrot Opdracht.csproj|c:\\users\\he\\documents\\github\\mandelbrot-with-ui\\mandelbrot opdracht\\mandelbrot opdracht.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{1DECA63B-EE09-4ADC-B388-BC92BE3E8BAF}|Mandelbrot Opdracht.csproj|solutionrelative:mandelbrot opdracht.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,22 +32,10 @@
               "RelativeDocumentMoniker": "Mandelbrot Opdracht.cs",
               "ToolTip": "C:\\Users\\He\\Documents\\GitHub\\Mandelbrot-with-UI\\Mandelbrot Opdracht\\Mandelbrot Opdracht.cs",
               "RelativeToolTip": "Mandelbrot Opdracht.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGEBAAAAAAAAAAAgwHABAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-02T22:43:05.496Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Mandelbrot Opdracht.csproj",
-              "DocumentMoniker": "C:\\Users\\He\\Documents\\GitHub\\Mandelbrot-with-UI\\Mandelbrot Opdracht\\Mandelbrot Opdracht.csproj",
-              "RelativeDocumentMoniker": "Mandelbrot Opdracht.csproj",
-              "ToolTip": "C:\\Users\\He\\Documents\\GitHub\\Mandelbrot-with-UI\\Mandelbrot Opdracht\\Mandelbrot Opdracht.csproj",
-              "RelativeToolTip": "Mandelbrot Opdracht.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-02T22:42:53.749Z"
             }
           ]
         }
