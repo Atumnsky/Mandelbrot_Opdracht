@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
-class SmoothForm : Form
+class SmoothForm : Form //SmoothForm werd gebruikt voor double buffer
 {
     public SmoothForm(Size window)
     {
@@ -13,24 +13,25 @@ class SmoothForm : Form
         DoubleBuffered = true;
     }
 
-    class Program
+    static class Program
     {
-        
-        static void Main()
+        static void Main() 
         {
-            // Meer moderne buttons
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+        //UI
 
+            // Window en bitmap size
             int screenWidth = 1000;
             int screenHeight = 750;
 
             int bitmapWidth = 750;
             int bitmapHeight = 750;
 
+            // Meer moderne UI
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
             Size window = new Size(screenWidth, screenHeight);
             SmoothForm screen = new SmoothForm(window);
-
 
             // Bitmap for the Mandelbrot
             Bitmap bitmap = new Bitmap(bitmapWidth, bitmapHeight);
@@ -66,7 +67,6 @@ class SmoothForm : Form
             it.Location = new Point(textX, itY);
             it.TextAlign = ContentAlignment.MiddleCenter;
             
-
 
             NumericUpDown itControl = new NumericUpDown();
             screen.Controls.Add(itControl);
@@ -280,15 +280,6 @@ class SmoothForm : Form
             random.Location = new Point(5, screenHeight - 150);
             random.Size = new Size(240, 25);
 
-            void randomG(object sender, EventArgs e)
-            {
-                gradientR.Value = red.Next(1,255);
-                gradientG.Value = green.Next(1, 255);
-                gradientB.Value = blue.Next(1, 255);
-                renderPicture(null, new EventArgs());
-            }
-
-
 
             // RGB (ABC) voor mandel getallen die naar oneindigd gaat (Islands)
             Label islandColor = new Label();
@@ -420,15 +411,33 @@ class SmoothForm : Form
             // Show Center button
             Button showC = new Button();
             screen.Controls.Add(showC);
-            showC.Text = "Show Center";
+            showC.Text = "Zoom Center";
             showC.Font = Arial;
             showC.Size = new Size(115, 30);
             showC.Location = new Point(5, renderY - 40);
+            bool center = false;
 
+            // UI Background
+            Bitmap background = new Bitmap(screenWidth, screenHeight);
 
+            Label achtergrond = new Label();
+            screen.Controls.Add(achtergrond);
+            achtergrond.BackColor = backgroundGray;
+            achtergrond.Size = new Size(screenWidth, screenHeight);
 
+            renderPicture(null, new EventArgs());
+
+            // Functies
             //////////////////////////////////////////////////////////////////////////////////////////////
 
+            //Random gradients
+            void randomG(object sender, EventArgs e)
+            {
+                gradientR.Value = red.Next(1, 255);
+                gradientG.Value = green.Next(1, 255);
+                gradientB.Value = blue.Next(1, 255);
+                renderPicture(null, new EventArgs());
+            }
 
             // Render view1
             void renderView1(object sender, EventArgs e)
@@ -528,17 +537,6 @@ class SmoothForm : Form
                 renderPicture(null, new EventArgs());
             }
 
-            // UI Background
-            Bitmap background = new Bitmap(screenWidth, screenHeight);
-
-            Label achtergrond = new Label();
-            screen.Controls.Add(achtergrond);
-            achtergrond.BackColor = backgroundGray;
-            achtergrond.Size = new Size(screenWidth, screenHeight);
-
-            bool center = false;
-            renderPicture(null, new EventArgs());
-
 
             // reset functie
             void Reset(object sender, EventArgs ea)
@@ -626,7 +624,7 @@ class SmoothForm : Form
                 }
             }
 
-            // Show center functie
+            // Show zoom center functie
             void centerOn(object sender, EventArgs ea)
             {
                 center = !center;
@@ -644,6 +642,7 @@ class SmoothForm : Form
 
             }
 
+            // Render functie
             void renderPicture(object sender, EventArgs ea)
             {
                 double zoomValue = (double)zoomControl.Value;
@@ -668,7 +667,7 @@ class SmoothForm : Form
                 {
                     for (int pixelY = 0; pixelY < bitmapHeight; pixelY++)
                     {
-                        // mapping functie
+                        // mapping
                         double x = ((pixelX - bitmapWidth / 2) * pixelDx) + centerX;
                         double y = ((pixelY - bitmapHeight / 2) * pixelDy) + centerY;
 
@@ -676,7 +675,7 @@ class SmoothForm : Form
                         double b = 0;
                         int iteration = 0;
 
-                        // iteratie functie
+                        // iteratie
                         while (a * a + b * b <= (double)itRangeC.Value && iteration < maxIteration)
                         {
 
@@ -690,7 +689,7 @@ class SmoothForm : Form
 
                         }
 
-                        // Color gradient for the pixels
+                        // Color gradient
 
                         if (a * a + b * b > 4)
                         {
@@ -717,7 +716,7 @@ class SmoothForm : Form
                         
                     }
                 }
-                // Als mouse magnification >5 is gezet dan de center en een tekst wijzen
+                // Als mouse magnification >5 is gezet dan de zoom center en een tekst wijzen
                 using(Graphics gr = Graphics.FromImage(bitmap))
                 if (mouseMag.Value > 5)
                 {
@@ -725,7 +724,7 @@ class SmoothForm : Form
                     gr.DrawRectangle(new Pen(Color.Red,3), (bitmapWidth / 2)-5, (bitmapHeight / 2)-5, 10, 10);
                 }
 
-
+                // Als center ON, zoom center wijzen
                 if (center)
                 {
 
