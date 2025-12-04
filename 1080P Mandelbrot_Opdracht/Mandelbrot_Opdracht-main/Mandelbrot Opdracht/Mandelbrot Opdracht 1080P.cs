@@ -15,6 +15,7 @@ class SmoothForm : Form
 
     class Program
     {
+        
         static void Main()
         {
             // Meer moderne buttons
@@ -32,7 +33,6 @@ class SmoothForm : Form
 
 
             // Bitmap for the Mandelbrot
-
             Bitmap bitmap = new Bitmap(bitmapWidth, bitmapHeight);
 
 
@@ -102,7 +102,7 @@ class SmoothForm : Form
             xControl.DecimalPlaces = 12;
             xControl.Minimum = -10000;
             xControl.Maximum = 10000;
-            xControl.Value = 0;
+            xControl.Value = -0.5M;
             xControl.Increment = 0.01M;
 
 
@@ -162,7 +162,7 @@ class SmoothForm : Form
             text1.Font = Arial;
             text1.ForeColor = Color.White;
             text1.BackColor = backgroundGray;
-            text1.Size = new Size(150, 25);
+            text1.Size = new Size(160, 25);
             int text1Y = ZC + 40;
             text1.Location = new Point(textX, text1Y);
             text1.TextAlign = ContentAlignment.MiddleCenter;
@@ -172,8 +172,8 @@ class SmoothForm : Form
             mouseMag.Font = Numbers;
             mouseMag.Anchor = AnchorStyles.Left;
             mouseMag.ForeColor = Color.Black;
-            mouseMag.Location = new Point(buttonX + 75, text1Y);
-            mouseMag.Size = new Size(50, 13);
+            mouseMag.Location = new Point(buttonX + 80, text1Y);
+            mouseMag.Size = new Size(45, 13);
             mouseMag.Minimum = 0;
             mouseMag.Maximum = 1000;
             mouseMag.Value = 5;
@@ -248,6 +248,29 @@ class SmoothForm : Form
             gradientB.Value = blue.Next(0,255);
             gradientB.Increment = 0.1M;
 
+            // Iteration Range control
+            Label itRange = new Label();
+            screen.Controls.Add(itRange);
+            itRange.Text = "Iteration Range";
+            itRange.Font = Arial;
+            itRange.ForeColor = Color.White;
+            itRange.BackColor = backgroundGray;
+            itRange.Location = new Point(textX+10, screenHeight - 180);
+            itRange.Size = new Size(120,30);
+
+            NumericUpDown itRangeC = new NumericUpDown();
+            screen.Controls.Add(itRangeC);
+            itRangeC.Font = Numbers;
+            itRangeC.Anchor = AnchorStyles.Left;
+            itRangeC.ForeColor = Color.Black;
+            itRangeC.Location = new Point(textX + 145, screenHeight - 185);
+            itRangeC.Size = new Size(80, 13);
+            itRangeC.DecimalPlaces = 1;
+            itRangeC.Minimum = 0.1M;
+            itRangeC.Maximum = decimal.MaxValue;
+            itRangeC.Value = 4;
+            itRangeC.Increment = 0.1M;
+
 
             // Random Gradient button
             Button random = new Button();
@@ -259,11 +282,12 @@ class SmoothForm : Form
 
             void randomG(object sender, EventArgs e)
             {
-                gradientR.Value = int.Clamp(red.Next(0,255), 0, 255);
-                gradientG.Value = int.Clamp(green.Next(0, 255), 0, 255);
-                gradientB.Value = int.Clamp(blue.Next(0, 255), 0, 255);
+                gradientR.Value = red.Next(1,255);
+                gradientG.Value = green.Next(1, 255);
+                gradientB.Value = blue.Next(1, 255);
                 renderPicture(null, new EventArgs());
             }
+
 
 
             // RGB (ABC) voor mandel getallen die naar oneindigd gaat (Islands)
@@ -401,6 +425,11 @@ class SmoothForm : Form
             showC.Size = new Size(115, 30);
             showC.Location = new Point(5, renderY - 40);
 
+
+
+            //////////////////////////////////////////////////////////////////////////////////////////////
+
+
             // Render view1
             void renderView1(object sender, EventArgs e)
             {
@@ -420,6 +449,8 @@ class SmoothForm : Form
                 colorA.Value = 0;
                 colorB.Value = 0;
                 colorC.Value = 0;
+
+                itRangeC.Value = 4;
 
                 renderPicture(null, new EventArgs());
             }
@@ -444,6 +475,8 @@ class SmoothForm : Form
                 colorB.Value = 0;
                 colorC.Value = 0;
 
+                itRangeC.Value = 4;
+
                 renderPicture(null, new EventArgs());
             }
 
@@ -467,6 +500,7 @@ class SmoothForm : Form
                 colorB.Value = 0;
                 colorC.Value = 0;
 
+                itRangeC.Value = 4;
                 renderPicture(null, new EventArgs());
             }
 
@@ -490,6 +524,7 @@ class SmoothForm : Form
                 colorB.Value = 0;
                 colorC.Value = 0;
 
+                itRangeC.Value = 4;
                 renderPicture(null, new EventArgs());
             }
 
@@ -528,9 +563,9 @@ class SmoothForm : Form
                 center = false;
                 showC.BackColor = Color.LightGray;
 
+                itRangeC.Value = 4;
                 renderPicture(null, new EventArgs());
             }
-
 
             // mouse zoom functie
             void mouseZoom(object sender, MouseEventArgs mea)
@@ -642,7 +677,7 @@ class SmoothForm : Form
                         int iteration = 0;
 
                         // iteratie functie
-                        while (a * a + b * b <= 4 && iteration < maxIteration)
+                        while (a * a + b * b <= (double)itRangeC.Value && iteration < maxIteration)
                         {
 
                             double newA = a * a - b * b + x;
@@ -666,10 +701,13 @@ class SmoothForm : Form
                             double tr = (iteration / redG) % 1;
                             double tg = (iteration / greenG) % 1;
                             double tb = (iteration / blueG) % 1;
-                            int R = (int)(255 * tr + 0 * (1 - tr) + 0.5);
-                            int G = (int)(255 * tg + 0 * (1 - tg) + 0.5);
-                            int B = (int)(255 * tb + 0 * (1 - tb) + 0.5);
-                            bitmap.SetPixel(pixelX, pixelY, Color.FromArgb(R, G, B));
+                            int R = (int)(255 * tr + 0.5);
+                            int G = (int)(255 * tg + 0.5);
+                            int B = (int)(255 * tb + 0.5);
+
+
+                                bitmap.SetPixel(pixelX, pixelY, Color.FromArgb(R, G, B));
+
                         }
                         else
                         {
