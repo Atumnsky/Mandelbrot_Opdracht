@@ -267,9 +267,9 @@ class SmoothForm : Form
 
             void randomG(object sender, EventArgs e)
             {
-                gradientR.Value = red.Next(0,255);
-                gradientG.Value = green.Next(0, 255);
-                gradientB.Value = blue.Next(0, 255);
+                gradientR.Value = red.Next(1,255);
+                gradientG.Value = green.Next(1, 255);
+                gradientB.Value = blue.Next(1, 255);
                 renderPicture(null, new EventArgs());
             }
 
