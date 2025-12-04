@@ -10,8 +10,6 @@ class SmoothForm : Form
         this.Text = "MandelBrot in C#";
         this.ClientSize = window;
 
-        //this.AutoScaleMode = AutoScaleMode.Dpi;
-
         DoubleBuffered = true;
     }
 
@@ -19,8 +17,7 @@ class SmoothForm : Form
     {
         static void Main()
         {
-            // Voor de DPI probleem
-            //Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            // Meer moderne buttons
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -38,11 +35,6 @@ class SmoothForm : Form
 
             Bitmap bitmap = new Bitmap(bitmapWidth, bitmapHeight);
 
-            // Voor de DPI probleem
-            using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
-            {
-                bitmap.SetResolution(g.DpiX, g.DpiY);
-            }
 
             Label figuur = new Label();
             screen.Controls.Add(figuur);
@@ -504,12 +496,6 @@ class SmoothForm : Form
             // UI Background
             Bitmap background = new Bitmap(screenWidth, screenHeight);
 
-            // Voor de DPI probleem
-            using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
-            {
-                background.SetResolution(g.DpiX, g.DpiY);
-            }
-
             Label achtergrond = new Label();
             screen.Controls.Add(achtergrond);
             achtergrond.BackColor = backgroundGray;
@@ -641,8 +627,6 @@ class SmoothForm : Form
                 double centerX = (double)xControl.Value;
                 double centerY = (double)yControl.Value;
 
-
-                // Iteratie waarde nemen van de control
                 int maxIteration = (int)itControl.Value;
 
                 for (int pixelX = 0; pixelX < bitmapWidth; pixelX++)
@@ -671,7 +655,7 @@ class SmoothForm : Form
 
                         }
 
-                        // Color for the pixels
+                        // Color gradient for the pixels
 
                         if (a * a + b * b > 4)
                         {
@@ -695,6 +679,7 @@ class SmoothForm : Form
                         
                     }
                 }
+                // Als mouse magnification >5 is gezet dan de center en een tekst wijzen
                 using(Graphics gr = Graphics.FromImage(bitmap))
                 if (mouseMag.Value > 5)
                 {
